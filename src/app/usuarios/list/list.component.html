@@ -1,0 +1,12 @@
+<div class="card-group">
+    <div class="card" *ngFor="let user of usersData">
+        <img [src]="user.avatar" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ user.first_name }}</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural.</p>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">ID: {{ user.id }}</small>
+        </div>
+    </div>
+</div>
