@@ -1,4 +1,20 @@
-<div class="card-group">
+<div class="alert alert-info" role="alert" *ngIf="isLoading">
+    <h4 class="alert-heading">Carregando...</h4>
+    <p>
+        <i class="fa fa-spin fa-2x"></i>
+    </p>
+    <p class="mb-0"></p>
+</div>
+
+<div class="alert alert-danger" role="alert" *ngIf="isLoading">
+    <h4 class="alert-heading">Carregando...</h4>
+    <pre>
+        {{ error | json }}
+    </pre>
+    <p class="mb-0"></p>
+</div>
+
+<div class="card-group" *ngIf="!isLoading">
     <div class="card" *ngFor="let user of usersData">
         <img [src]="user.avatar" class="card-img-top" alt="...">
         <div class="card-body">
